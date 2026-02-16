@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Dr. Tania Afroze ❤️</title>
+
+<style>
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:black;
+color:white;
+scroll-behavior:smooth;
+overflow-x:hidden;
+}
+
+/* INTRO SCREEN */
+#intro{
+position:fixed;
+width:100%;
+height:100vh;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:40px;
+z-index:3000;
+animation:fadeOut 4s forwards;
+}
+
+@keyframes fadeOut{
+0%{opacity:1;}
+80%{opacity:1;}
+100%{opacity:0; visibility:hidden;}
+}
+
+/* PASSWORD */
+#lock{
+position:fixed;
+width:100%;
+height:100vh;
+background:linear-gradient(135deg,#ff416c,#ff4b2b);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
+
+input,button{
+padding:10px 20px;
+border:none;
+border-radius:20px;
+margin-top:10px;
+}
+
+button{
+cursor:pointer;
+font-weight:bold;
+}
+
+/* NAV */
+nav{
+position:fixed;
+width:100%;
+background:rgba(0,0,0,0.6);
+padding:15px;
+text-align:center;
+z-index:1000;
+}
+
+nav a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* SECTIONS */
+section{
+min-height:100vh;
+padding:120px 20px;
+text-align:center;
+animation:fade 2s;
+}
+
+@keyframes fade{
+from{opacity:0; transform:translateY(40px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+.gallery{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+justify-content:center;
+margin-top:20px;
+}
+
+.gallery img{
+width:200px;
+height:200px;
+object-fit:cover;
+border-radius:15px;
+transition:0.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.1);
+}
+
+/* Hearts */
+.heart{
+position:fixed;
+bottom:-10px;
+font-size:20px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+from{transform:translateY(0);}
+to{transform:translateY(-100vh);}
+}
+
+/* Proposal */
+#proposal{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+color:#ff416c;
+padding:30px;
+border-radius:20px;
+display:none;
+z-index:4000;
+}
+
+/* Countdown */
+#countdown{
+font-size:25px;
+margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="intro">
+<span id="typing"></span>
+</div>
+
+<div id="lock">
+<h2>Enter Password ❤️</h2>
+<input type="password" id="pass">
+<button onclick="checkPass()">Unlock</button>
+</div>
+
+<div id="proposal">
+<h2>Dr. Tania Afroze 💍</h2>
+<p>Will You Be My Forever Wife? ❤️</p>
+<button onclick="yes()">YES 💖</button>
+</div>
+
+<nav>
+<a href="#wish">Wish</a>
+<a href="#relation">Moments</a>
+<a href="#life">My Life</a>
+<a href="#married">Married</a>
+<a href="#" onclick="openProposal()">💍 Propose</a>
+</nav>
+
+<section id="wish">
+<h1>🌹 First Wish 🌹</h1>
+<p>You are my dream, my peace, my forever love.</p>
+</section>
+
+<section id="relation">
+<h1>💞 Our Moments 💞</h1>
+<p>Every chat, every smile, every memory with you is priceless.</p>
+<input type="file" accept="image/*" onchange="loadImage(event)">
+<div class="gallery" id="gallery"></div>
+</section>
+
+<section id="life">
+<h1>✨ You Changed My Life ✨</h1>
+<p>You made me stronger, more positive and more focused.</p>
+</section>
+
+<section id="married">
+<h1>💍 Our Married Dream 💍</h1>
+<p>A peaceful home, endless love and growing old together.</p>
+
+<div id="countdown"></div>
+</section>
+
+<audio id="music" loop>
+<source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3">
+</audio>
+
+<script>
+
+/* Typing Animation */
+var text="Dr. Tania Afroze ❤️";
+var i=0;
+function typing(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(typing,100);
+}
+}
+typing();
+
+/* Password */
+function checkPass(){
+if(document.getElementById("pass").value==="tania123"){
+document.getElementById("lock").style.display="none";
+document.getElementById("music").play();
+}else{
+alert("Wrong Password ❤️");
+}
+}
+
+/* Gallery */
+function loadImage(event){
+var img=document.createElement("img");
+img.src=URL.createObjectURL(event.target.files[0]);
+document.getElementById("gallery").appendChild(img);
+}
+
+/* Floating Hearts */
+setInterval(()=>{
+var heart=document.createElement("div");
+heart.className="heart";
+heart.style.left=Math.random()*100+"vw";
+heart.innerHTML="❤️";
+document.body.appendChild(heart);
+setTimeout(()=>{heart.remove();},6000);
+},400);
+
+/* Proposal */
+function openProposal(){
+document.getElementById("proposal").style.display="block";
+}
+function yes(){
+document.getElementById("proposal").style.display="none";
+fireworks();
+}
+
+/* Fireworks */
+function fireworks(){
+for(let i=0;i<50;i++){
+let fire=document.createElement("div");
+fire.innerHTML="✨";
+fire.style.position="fixed";
+fire.style.left=Math.random()*100+"vw";
+fire.style.top=Math.random()*100+"vh";
+fire.style.fontSize="25px";
+document.body.appendChild(fire);
+setTimeout(()=>{fire.remove();},2000);
+}
+alert("She Said YES ❤️ Forever Together!");
+}
+
+/* Countdown (Example: 1 Jan 2027) */
+var countDate=new Date("Jan 1, 2027 00:00:00").getTime();
+setInterval(()=>{
+var now=new Date().getTime();
+var gap=countDate-now;
+var d=Math.floor(gap/(1000*60*60*24));
+document.getElementById("countdown").innerHTML="Our Special Day Countdown: "+d+" Days Left ❤️";
+},1000);
+
+</script>
+
+</body>
+</html>
+

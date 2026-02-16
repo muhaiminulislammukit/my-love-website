@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For My Love - Dr. Tania Afroze</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            text-align: center;
+            color: white;
+        }
+        header {
+            padding: 50px;
+            font-size: 40px;
+            font-weight: bold;
+        }
+        nav {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+        }
+        nav a {
+            color: white;
+            margin: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        section {
+            padding: 50px;
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: white;
+            color: #ff4e50;
+            font-size: 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        footer {
+            padding: 20px;
+            background: rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    ❤️ Welcome My Love ❤️ <br>
+    Dr. Tania Afroze
+</header>
+
+<nav>
+    <a href="#" onclick="showSection('wish')">First Wish</a>
+    <a href="#" onclick="showSection('love')">Our Love Story</a>
+    <a href="#" onclick="showSection('journey')">Relationship Journey</a>
+    <a href="#" onclick="showSection('married')">Married Life Dream</a>
+    <a href="#" onclick="showSection('memory')">Future Memories</a>
+</nav>
+
+<section id="wish" class="active">
+    <h2>🌹 My First Wish 🌹</h2>
+    <p>My dearest Dr. Tania Afroze,  
+    From the very first moment I saw you, my heart knew you were special.  
+    Today I just want to say — I love you endlessly. ❤️</p>
+</section>
+
+<section id="love">
+    <h2>💞 Our Love Story 💞</h2>
+    <p>It started with a simple hello...  
+    Then slowly conversations turned into emotions,  
+    emotions turned into attachment,  
+    and attachment turned into forever love.  
+    You are my peace, my happiness, my everything.</p>
+</section>
+
+<section id="journey">
+    <h2>🌸 Our Relationship Journey 🌸</h2>
+    <p>From late night talks to caring messages,  
+    from small fights to sweet apologies,  
+    every moment with you is a beautiful chapter of my life.  
+    I promise to stay beside you always.</p>
+</section>
+
+<section id="married">
+    <h2>💍 Our Married Life Dream 💍</h2>
+    <p>I dream of a home filled with love, laughter, and respect.  
+    Waking up beside you every morning,  
+    supporting each other in every situation,  
+    and building a beautiful future together.</p>
+</section>
+
+<section id="memory">
+    <h2>✨ Our Future Memories ✨</h2>
+    <p>Traveling together,  
+    celebrating anniversaries,  
+    capturing cute moments,  
+    and growing old hand in hand.  
+    I want forever with you, my future wife. ❤️</p>
+</section>
+
+<footer>
+    Made with Endless Love ❤️ for Dr. Tania Afroze
+</footer>
+
+<script>
+    function showSection(sectionId) {
+        var sections = document.querySelectorAll("section");
+        sections.forEach(function(section) {
+            section.classList.remove("active");
+        });
+        document.getElementById(sectionId).classList.add("active");
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Dr. Tania Afroze ❤️</title>
+
+<style>
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#ff758c,#ff7eb3);
+    overflow-x:hidden;
+    color:white;
+}
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(0,0,0,0.4);
+    padding:15px;
+    text-align:center;
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 20px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#ffd700;
+}
+
+section{
+    min-height:100vh;
+    padding:120px 20px 60px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    animation:fadeIn 1.5s ease;
+}
+
+h1{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+p{
+    max-width:700px;
+    font-size:18px;
+    line-height:1.8;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+.gallery{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    justify-content:center;
+    margin-top:30px;
+}
+
+.gallery img{
+    width:200px;
+    height:200px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:0.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.1);
+}
+
+input[type="file"]{
+    margin-top:20px;
+    background:white;
+    color:black;
+    padding:8px;
+    border-radius:10px;
+}
+
+/* Floating hearts */
+.heart{
+    position:fixed;
+    bottom:-10px;
+    font-size:20px;
+    animation:float 6s linear infinite;
+}
+
+@keyframes float{
+    from{transform:translateY(0);}
+    to{transform:translateY(-100vh);}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#wish">Wish</a>
+<a href="#relation">Relationship</a>
+<a href="#life">My Life With You</a>
+<a href="#married">Married Life</a>
+</nav>
+
+<section id="wish">
+<h1>🌹 First Wish 🌹</h1>
+<p>
+My dearest Dr. Tania Afroze,  
+From the very first moment, you became the most beautiful part of my world.  
+Today I just want to say — I love you endlessly and purely.  
+You are my heart, my peace, my forever. ❤️
+</p>
+</section>
+
+<section id="relation">
+<h1>💞 Our Relationship & Moments 💞</h1>
+<p>
+From our first conversation to our late night talks,  
+from small fights to sweet apologies —  
+every single moment with you is priceless.  
+You are not just my love, you are my best memory.
+</p>
+
+<h2>📸 Our Gallery</h2>
+<input type="file" accept="image/*" onchange="loadImage(event)">
+<div class="gallery" id="gallery"></div>
+</section>
+
+<section id="life">
+<h1>✨ You Changed My Life ✨</h1>
+<p>
+Before you, life was normal.  
+After you, life became meaningful.  
+You made me more positive, more focused, and more responsible.  
+You inspire me to grow, to dream big, and to become a better man every day.  
+You are my strength and my motivation.
+</p>
+</section>
+
+<section id="married">
+<h1>💍 Our Married Life Dream 💍</h1>
+<p>
+I dream of waking up beside you every morning,  
+building a peaceful home filled with love and respect.  
+Traveling together, supporting each other,  
+and growing old hand in hand.  
+You are my future wife, my forever partner.
+</p>
+</section>
+
+<script>
+function loadImage(event){
+    var image = document.createElement("img");
+    image.src = URL.createObjectURL(event.target.files[0]);
+    document.getElementById("gallery").appendChild(image);
+}
+
+/* floating hearts */
+setInterval(()=>{
+    var heart = document.createElement("div");
+    heart.className="heart";
+    heart.style.left=Math.random()*100+"vw";
+    heart.innerHTML="❤️";
+    document.body.appendChild(heart);
+    setTimeout(()=>{heart.remove();},6000);
+},500);
+</script>
+
+</body>
+</html>

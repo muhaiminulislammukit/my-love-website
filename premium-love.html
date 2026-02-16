@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Dr. Tania Afroze ❤️</title>
+
+<style>
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:black;
+color:white;
+overflow-x:hidden;
+}
+
+/* Password Screen */
+#lockScreen{
+position:fixed;
+width:100%;
+height:100vh;
+background:linear-gradient(135deg,#ff416c,#ff4b2b);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
+
+input{
+padding:10px;
+border:none;
+border-radius:20px;
+margin-top:10px;
+}
+
+button{
+padding:10px 20px;
+border:none;
+border-radius:20px;
+background:white;
+color:#ff416c;
+margin-top:10px;
+cursor:pointer;
+font-weight:bold;
+}
+
+/* Main Content */
+nav{
+position:fixed;
+width:100%;
+background:rgba(0,0,0,0.6);
+padding:15px;
+text-align:center;
+z-index:1000;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-weight:bold;
+}
+
+section{
+min-height:100vh;
+padding:120px 20px;
+text-align:center;
+animation:fade 2s;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(50px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+.gallery{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+justify-content:center;
+margin-top:20px;
+}
+
+.gallery img{
+width:200px;
+height:200px;
+object-fit:cover;
+border-radius:15px;
+transition:0.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.1);
+}
+
+/* Floating hearts */
+.heart{
+position:fixed;
+bottom:-10px;
+font-size:20px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+from{transform:translateY(0);}
+to{transform:translateY(-100vh);}
+}
+
+/* Proposal Popup */
+#proposal{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+color:#ff416c;
+padding:30px;
+border-radius:20px;
+display:none;
+text-align:center;
+z-index:3000;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Password Screen -->
+<div id="lockScreen">
+<h1>Enter Password ❤️</h1>
+<input type="password" id="pass">
+<button onclick="checkPass()">Unlock</button>
+</div>
+
+<!-- Proposal Popup -->
+<div id="proposal">
+<h2>Dr. Tania Afroze 💍</h2>
+<p>Will you be my forever? ❤️</p>
+<button onclick="closeProposal()">Yes 💖</button>
+</div>
+
+<nav>
+<a href="#wish">Wish</a>
+<a href="#relation">Relationship</a>
+<a href="#life">My Life</a>
+<a href="#married">Married</a>
+<a href="#" onclick="openProposal()">💍 Propose</a>
+</nav>
+
+<section id="wish">
+<h1>🌹 First Wish 🌹</h1>
+<p>You are the most beautiful blessing of my life. I love you endlessly.</p>
+</section>
+
+<section id="relation">
+<h1>💞 Our Moments 💞</h1>
+<p>From first message to deep love — every moment with you is priceless.</p>
+
+<h2>📸 Gallery</h2>
+<input type="file" accept="image/*" onchange="loadImage(event)">
+<div class="gallery" id="gallery"></div>
+</section>
+
+<section id="life">
+<h1>✨ You Changed Me ✨</h1>
+<p>You made me stronger, positive, focused and more responsible.  
+You are my inspiration and my motivation.</p>
+</section>
+
+<section id="married">
+<h1>💍 Our Married Dream 💍</h1>
+<p>A peaceful home, endless love, respect, laughter and growing old together.</p>
+</section>
+
+<audio id="bgMusic" loop>
+<source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+</audio>
+
+<script>
+
+/* Password Check */
+function checkPass(){
+if(document.getElementById("pass").value==="tania123"){
+document.getElementById("lockScreen").style.display="none";
+document.getElementById("bgMusic").play();
+}else{
+alert("Wrong Password ❤️");
+}
+}
+
+/* Gallery */
+function loadImage(event){
+var img=document.createElement("img");
+img.src=URL.createObjectURL(event.target.files[0]);
+document.getElementById("gallery").appendChild(img);
+}
+
+/* Floating Hearts */
+setInterval(()=>{
+var heart=document.createElement("div");
+heart.className="heart";
+heart.style.left=Math.random()*100+"vw";
+heart.innerHTML="❤️";
+document.body.appendChild(heart);
+setTimeout(()=>{heart.remove();},6000);
+},400);
+
+/* Proposal */
+function openProposal(){
+document.getElementById("proposal").style.display="block";
+}
+function closeProposal(){
+document.getElementById("proposal").style.display="none";
+alert("She Said YES ❤️ Forever Together!");
+}
+
+</script>
+
+</body>
+</html>
